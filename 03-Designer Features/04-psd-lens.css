@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#logo {
+    position: absolute;
+    top: 5%;
+    left: 7%;
+    height: 4vw;
+}
+
+.header {
+    /* DEMO header image */
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: relative;
+}
+
+.header:before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+}
+
+.header-content {
+    position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.header h1 {
+    position: absolute;
+    /* DEMO: measure percent position */
+    
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-family: "ff-good-headline-web-pro-con",sans-serif;
+    font-size: 10vw;
+    font-weight: 900;
+}
+
+.instruments {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    top: 80%;
+    height: 8vw;
+    margin: auto auto;
+}
+
+.instruments a {
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    width: 8vw;
+    height: 8vw;
+    /* DEMO: margin-right */
+    
+}
+
+.keyboard {
+    background: url(images/keyboard.svg);
+}
+.stereo {
+    /* DEMO */
+}

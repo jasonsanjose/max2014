@@ -1,0 +1,84 @@
+$size: 120px;
+$halfsize: $size/2;
+
+html, body {
+    margin: 0;
+    padding: 3;
+    /* font-family: source-sans-pro; */
+    font-family: sans-serif;
+    height: 100%;
+    font-size: .9em;
+}
+
+code {
+    color: #f00;
+    font-family: source-code-pro;
+    font-weight: bold;
+}
+
+.stage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+#scratch {
+    border-top: 1px solid #000;
+    box-sizing: border-box;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    height: 30%;
+    width: 100%;
+    overflow: auto;
+    font-family: monospace;
+}
+
+.spinner {
+    position: absolute;
+    top: -$size/2;
+    left: -$size/2;
+}
+
+/* div::before { content: "pseudo"; font-size: .5em; } */
+
+.spinner div {
+    position: absolute;
+    width: $size;
+    height: $size;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    text-align: center;
+    line-height: $size;
+    font-size: 100px;
+    font-family: sans-serif;
+    background: url("assets/brackets_256.png") center no-repeat; /* 8bitheart.png */
+    background-size: 80% 80%;
+}
+
+.spinner {
+    .face1 { -webkit-transform: translateZ($halfsize);                                }
+    .face2 { -webkit-transform: rotateY(90deg) translateZ($halfsize); }
+    .face3 { -webkit-transform: rotateY(90deg) rotateX(90deg) translateZ($halfsize);  }
+    .face4 { -webkit-transform: rotateY(180deg) rotateZ(90deg) translateZ($halfsize); }
+    .face5 { -webkit-transform: rotateY(-90deg) rotateZ(90deg) translateZ($halfsize); }
+    .face6 { -webkit-transform: rotateX(-90deg) translateZ($halfsize);                }
+}
+
+.spinner {
+    -webkit-animation-name: spincube;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 12s;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: $halfsize $halfsize 0;
+}
+
+@-webkit-keyframes spincube {
+    from,to  {                                                    }
+    16%      { -webkit-transform: rotateY(-90deg);                }
+    33%      { -webkit-transform: rotateY(-90deg) rotateZ(90deg); }
+    50%      { -webkit-transform: rotateY(180deg) rotateZ(90deg); }
+    66%      { -webkit-transform: rotateY(90deg) rotateX(90deg);  }
+    83%      { -webkit-transform: rotateX(90deg);                 }
+}
